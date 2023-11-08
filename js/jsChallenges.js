@@ -35,3 +35,29 @@ console.log(gradDateSelected);
 
 let radioButton1 = document.getElementsByName("standing");
 let radioButton2 = document.getElementsByName("gradDate");
+
+let radioForm = document.getElementById("ch3form");
+
+radioForm.addEventListener("submit", function () {
+  let firstChecked = false;
+  let secondChecked = false;
+  for (let i = 0; i < radioButton1.length; i++) {
+    if (radioButton1[i].checked) {
+      firstChecked = true;
+      break;
+    }
+  }
+  for (let i = 0; i < radioButton2.length; i++) {
+    if (radioButton2[i].checked) {
+      secondChecked = true;
+      break;
+    }
+  }
+  if (firstChecked && secondChecked) {
+    console.log("both checked");
+  } else {
+    alert(
+      "Please select BOTH current class standing and anticipated graduation date"
+    );
+  }
+});
